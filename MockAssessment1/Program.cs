@@ -1,41 +1,27 @@
 ﻿public class Program
 {
 
-    public static void Main()
+    public static void Main(string[] args)
     {
         bool isEqual;
-        isEqual = Program.IsTheSame();
+        isEqual = Program.IsTheSame(5, 3);
         Console.WriteLine();
         Console.WriteLine(isEqual);
 
         double minus;
-        minus = Program.Subtract();
+        minus = Program.Subtract(5.5, 3.1);
         Console.WriteLine();
         Console.WriteLine(minus);
 
         string building;
-        building = Program.FindBuildingType();
+        building = Program.FindBuildingType(38);
         Console.WriteLine();
         Console.WriteLine(building);
 
         Console.ReadLine();
     }
-    public static bool IsTheSame()
+    public static bool IsTheSame(int num1, int num2)
     {
-
-        int num1 = 0;
-        int num2 = 0;
-        bool userAns = false;
-        bool userBns = false;
-
-        Console.WriteLine("Please enter an integer: ");
-        string userNumX = Console.ReadLine();
-        userAns = int.TryParse(userNumX, out num1);
-
-        Console.WriteLine();
-        Console.WriteLine("Please enter another integer: ");
-        string userNumY = Console.ReadLine();
-        userBns = int.TryParse(userNumY, out num2);
 
         if (num1 == num2)
         {
@@ -46,40 +32,18 @@
             return false;
         }
     }
-    public static double Subtract()
+    public static double Subtract(double num1, double num2)
     {
-
-        double num1 = 0;
-        double num2 = 0;
-        bool userAns = false;
-        bool userBns = false;
-
-        Console.WriteLine("Please enter any number: ");
-        string userNumX = Console.ReadLine();
-        userAns = double.TryParse(userNumX, out num1);
-
-        Console.WriteLine();
-        Console.WriteLine("Please enter another number: ");
-        string userNumY = Console.ReadLine();
-        userBns = double.TryParse(userNumY, out num2);
-
-        double sum = num1 - num2;
-        return sum;
+        return num1 - num2;
     }
 
 
-    public static string FindBuildingType()
+    public static string FindBuildingType(int num1)
     {
-        int num1 = 0;
-        bool userAns = false;
         string house = "This is a house!";
         string office = "This is an office building!";
         string skyScraper = "This is a skyscraper!";
         string sSkyScraper = "This is a SUPER skyscraper!";
-
-        Console.WriteLine("Please enter an integer: ");
-        string userNumX = Console.ReadLine();
-        userAns = int.TryParse(userNumX, out num1);
 
         if (num1 <= 3)
         {
